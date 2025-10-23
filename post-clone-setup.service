@@ -1,0 +1,11 @@
+[Unit]
+Description=One-Time Post-Clone Setup (LVM, MOTD, Network)
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/post-clone-setup.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
